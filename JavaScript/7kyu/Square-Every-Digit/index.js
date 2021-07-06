@@ -1,7 +1,1 @@
-const squareDigits = (num) =>
-  Number(
-    `${num}`
-      .split("")
-      .map((el) => el ** 2)
-      .join("")
-  );
+const squareDigits = (num) => +[...`${num}`].map((el) => el ** 2).join("");
