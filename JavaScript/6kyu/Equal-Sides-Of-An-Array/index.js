@@ -1,10 +1,4 @@
-const findEvenIndex = (arr) => {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (sum === arr.slice(i + 1).reduce((pv, cv) => pv + cv, 0)) {
-      return i;
-    }
-    sum += arr[i];
-  }
-  return -1;
-};
+const sum = (arr, from, to) =>
+  arr.slice(from, to).reduce((pv, cv) => pv + cv, 0);
+const findEvenIndex = (arr) =>
+  arr.findIndex((_, i) => sum(arr, 0, i) === sum(arr, i + 1));
